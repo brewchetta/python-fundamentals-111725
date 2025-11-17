@@ -219,3 +219,5 @@ print( "the bill:", the_bill )
 
 the_bill = restaurant_bill_calculator(50, "maybe between six and fifteen we'll see")
 print( "the bill:", the_bill )
+
+# this is the end of the file

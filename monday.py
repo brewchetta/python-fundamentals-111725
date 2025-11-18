@@ -4,61 +4,62 @@
 # a comment does not get read by python
 
 # variable
-# given it a name - uses snake case
-# given it a value
-# variable_name = "hello world"
+# give it a name - uses snake case
+# give it a value
+variable_name = "hello world"
 # 				# string - a piece of text
 
 # define variables
-# my_favorite_dad_joke = "Why did the scarecrow win an award? Because he was outstanding in his field!"
+my_favorite_dad_joke = "Why did the scarecrow win an award? Because he was outstanding in his field!"
 
-# question = 'What do you call fake spaghetti?'
-# answer = 'An "impasta"'
+question = 'What do you call fake spaghetti?'
+answer = 'An "impasta"'
 
-# formatted_jokes = f"{ question } { answer }"
+formatted_joke = f"{ question } { answer }"
 
-# concatenated_joke = formatted_joke + ". " + my_favorite_dad_joke
+concatenated_joke = question + answer
 
 # print( my_favorite_dad_joke )
 
 # print(formatted_jokes)
 
 # integer
-# number_of_snakes = 12
+number_of_snakes = 12
 
-# number_of_snakes = 8
+# you may change the value of a variable
+number_of_snakes = 8
 
 # print( number_of_snakes )
 
 # floating point number / float
-# average_number_of_snakes = 9.8
+average_number_of_snakes = 9.8
 
 # print( number_of_snakes )
 
 # boolean
 # true / false
-# i_am_true = True
-# i_am_false = False
+i_am_true = True
+i_am_false = False
 
-# first_name = "Chett"
-# last_name = 12
+first_name = "Chett"
+last_name = 12
 
-# first_name_is_not_string = type( first_name ) != str
-# last_name_is_not_string = type( last_name ) != str
+first_name_is_not_string = type( first_name ) != str
+last_name_is_not_string = type( last_name ) != str
 
 # conditionals
-# if first_name == "Chett" and last_name == "Henry":
-#     print( "Welcome Chett Henry" )
+if first_name == "Chett" and last_name == "Henry":
+    print( "Welcome Chett Henry" )
 
-#     if number_of_snakes >= 10:
-#         print("You have a lot of snakes today Chett")
+    if number_of_snakes >= 10:
+        print("You have a lot of snakes today Chett")
 
-# elif first_name_is_not_string or last_name_is_not_string:
-# 	print( "ENTRIES MUST BE TEXT" )
-# elif first_name:
-# 	print( "Hello stranger" )
-# else:
-# 	print("EMPTY FIRST NAME TRY AGAIN")
+elif first_name_is_not_string or last_name_is_not_string:
+	print( "ENTRIES MUST BE TEXT" )
+elif first_name:
+	print( "Hello stranger" )
+else:
+	print("EMPTY FIRST NAME TRY AGAIN")
 
 # ######################################################################### #
 
@@ -70,79 +71,74 @@ def say_hello():
 	print("hello")
 
 # call function
-# what_we_get = say_hello()
+what_we_get = say_hello()
 
 # print( what_we_get )
 
-# def add_one_plus_one():
-# 	return 1 + 1
+def add_one_plus_one():
+	return 1 + 1
 
-# what_we_get = add_one_plus_one()
+what_we_get = add_one_plus_one()
 
 # print( what_we_get )
 
 # # function with parameters
-# def add( number_one:int, number_two:int ):
-# 	return number_one + number_two
+def add( number_one:int, number_two:int ):
+	return number_one + number_two
 
 # # invoking with arguments
-# result = add( 1, 6 )
+result = add( 1, 6 )
 
-# def multiply(a, b, c=""):
-# 	return a * b * c
+def multiply(a, b, c=""):
+	return a * b * c
 
-# result_two = multiply(5, 2)
+result_two = multiply(5, 2)
 
 # print( result_two )
 
-# def dad_joke_creator( question:str, punchline:str ):
-# 	return f"{question} {punchline} :D"
+def dad_joke_creator( question:str, punchline:str ):
+	return f"{question} {punchline} :D"
 
-# dad_joke = dad_joke_creator("Why can't your nose be 12 inches long?", "Because then it would be a foot!")
+dad_joke = dad_joke_creator("Why can't your nose be 12 inches long?", "Because then it would be a foot!")
 
 # print( dad_joke )
 
 # # scope
 
+outside_thoughts = "I am happy and well adjusted"
 
 # # using the global variable
-# def think_about_thoughts():
-# 	global outside_thoughts
-# 	outside_thoughts = outside_thoughts + " but I would like a sportscar"
+def think_about_thoughts():
+	global outside_thoughts
+	outside_thoughts = outside_thoughts + " but I would like a sportscar"
 
-# think_about_thoughts()
-# think_about_thoughts()
-# think_about_thoughts()
-# think_about_thoughts()
-# think_about_thoughts()
+think_about_thoughts()
 
 # print( outside_thoughts )
 
-# outside_thoughts = "I am happy and well adjusted"
-
-# def think_inside_thoughts():
+def think_inside_thoughts():
 	# we have declared a new variable called outside_thoughts in the local scope
-	# outside_thoughts = "I am an outside thought I think"
-	# print( outside_thoughts )
+	outside_thoughts = "I am an outside thought I think"
+	print( outside_thoughts )
 
 # pull the global variable without altering it
-# def think_my_outside_thoughts():
-# 	print( outside_thoughts )
+def think_my_outside_thoughts():
+	print( outside_thoughts )
 
-# think_my_outside_thoughts()
+think_my_outside_thoughts()
 
 # print(outside_thoughts)
 
 # you can only return one time in a function
-# def multiple_returns():
-# 	# this first return ends the function execution
-# 	return "I am the return"
-# 	# these other returns have NO EFFECT
-# 	return "I'll be back"
-# 	return "MORE RETURNS"
-# 	return "EVEN MORE RETURNS"
+def multiple_returns():
+	# this first return ends the function execution
+	return "I am the return"
+	# these other returns have NO EFFECT
+	return "I'll be back"
+	return "MORE RETURNS"
+	return "EVEN MORE RETURNS"
 
-# result = multiple_returns()
+result = multiple_returns()
 
 # print( result )
 
@@ -169,14 +165,7 @@ def passable_function():
 	pass
 
 
-
-
-
-
 # PRACTICE #
-
-
-# UNTIL 3:50pm EST
 
 # takes in the total price of the meal, 
 # you can optionally add a tip, 
@@ -200,24 +189,22 @@ def restaurant_bill_calculator(total:float, number_of_guests:int=1, tip_percenta
 		return "incorrect data types try again"
 
 the_bill = restaurant_bill_calculator(50, 1, 0.0)
-print( "the bill:", the_bill )
+# print( "the bill:", the_bill )
 
 the_bill = restaurant_bill_calculator(50, 2, 0.0)
-print( "the bill:", the_bill )
+# print( "the bill:", the_bill )
 
 the_bill = restaurant_bill_calculator(50, 2, 0.20)
-print( "the bill:", the_bill )
+# print( "the bill:", the_bill )
 
 the_bill = restaurant_bill_calculator(50)
-print( "the bill:", the_bill )
+# print( "the bill:", the_bill )
 
 the_bill = restaurant_bill_calculator(50, 0)
-print( "the bill:", the_bill )
+# print( "the bill:", the_bill )
 
 the_bill = restaurant_bill_calculator("50 buckos", 5)
-print( "the bill:", the_bill )
+# print( "the bill:", the_bill )
 
 the_bill = restaurant_bill_calculator(50, "maybe between six and fifteen we'll see")
-print( "the bill:", the_bill )
-
-# this is the end of the file
+# print( "the bill:", the_bill )

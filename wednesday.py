@@ -12,4 +12,5 @@
 
 # Define a new function halfway_there() which accepts a list of arbitrary data `items` longer than 1 item
 #   insert the string "HALFWAY" at the middle of the list and return the altered list
+# 	when inserting, you will need to make sure your index is an integer...
 #   Example: halfway_there( [1,2,3,4,5,6] ) >>> [1,2,3,"HALFWAY",4,5,6]

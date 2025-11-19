@@ -4,6 +4,7 @@
 #   return True if the function contains the string "fungus" and False if not
 # 	don't overthink this one, there's a very simple method to doing it...
 #   Example: fungus_among_us( ["tree", "flower", "fungus", "moss"] ) >>> True
+#   Example: fungus_among_us( ["tree", "flower", "fungus", "moss"] ) >>> True
 
 # Define a new function total_bill() which accepts a list of numbers `item_costs`
 #   return the sum total of all items in the list

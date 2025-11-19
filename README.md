@@ -4,4 +4,4 @@
 
 [Day Two - Lists, Dictionaries, Iterables, Lambdas](tuesday.py)
 
-[Day Three - Object Oriented Programming in Python](tuesday.py)
+[Day Three - Object Oriented Programming in Python](wednesday.py)

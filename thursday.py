@@ -21,3 +21,37 @@ from datetime import date
 from movie_reviews import MovieReview
 
 predator = MovieReview(movie_title="Predator", reviewer_name="Chett", date_reviewed=date.today(), score=4)
+
+
+
+
+
+
+# ERROR HANDLING #
+
+def divide_numbers(num_one, num_two):
+	try: # do this if you can
+		if type(num_one) != int or type(num_two) != int:
+			# this will artificially trigger an error
+			raise TypeError("Why would you give me anything that's not an integer HOW DARE YOU")
+		print(num_one / num_two)
+	except ZeroDivisionError: # do this if you got a ZeroDivisionError
+		print(f"could not divide {num_one} by {num_two}")
+	except TypeError as the_error_we_got: # do this if you got a TypeError (like the one we raise above)
+		print(f"We got a type error!")
+		print(the_error_we_got)
+	finally: # this will happen after either of the above triggers
+		print("FUNCTION DONE")
+
+def cube_number(number):
+	try:
+		return number ** 3
+	except TypeError:
+		return "This data type cannot be cubed"
+
+# try:
+# 	divided_by_zero = 100 / 0
+# except:
+# 	print("I could not divide by zero... WOMP WOMP")
+
+# print("I am below the error")

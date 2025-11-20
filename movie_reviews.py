@@ -20,6 +20,8 @@ class MovieReview:
 	def increase_score(self):
 		if self.score < 5:
 			self.score += 1
+		else:
+			raise ValueError("score cannot exceed 5")
 		return self.score
 
 	# Create an instance method `increase_score()` which increases that movie's score by 1 but not above 5.

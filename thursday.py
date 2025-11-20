@@ -55,3 +55,110 @@ def cube_number(number):
 # 	print("I could not divide by zero... WOMP WOMP")
 
 # print("I am below the error")
+
+
+# HTTP REQUESTS #
+
+import requests
+
+def get_dad_joke():
+	try:
+		response = requests.get("http://icanhazdadjoke.com", headers={ "Accept": "text/plain" })
+		joke_text = response.text
+		return joke_text
+	except:
+		print("Unable to fetch dad joke")
+
+# new_joke = get_dad_joke()
+
+def fetch_number_of_jokes(num_jokes):
+	jokes_list = []
+	for _ in range(num_jokes):
+		fetched_joked = get_dad_joke()
+		jokes_list.append( fetched_joked )
+	return jokes_list
+
+
+# WRITING TO JSON FILES #
+
+import json
+
+def put_into_json_file(list_data):
+	current_jokes = get_from_json_file()
+	with open('jokes.json', 'w') as json_file:
+		combined_jokes = current_jokes + list_data
+		json.dump( combined_jokes, json_file, indent=4 )
+
+
+def get_from_json_file():
+	with open('jokes.json', 'r') as json_file:
+		data = json.load(json_file)
+		return data
+
+
+# BUILDING PROGRAM #
+
+# user stories --> a user will be able to...
+
+# a user will be able to boot up the program and see a menu
+# a user will be able to fetch a new dad joke
+# a user will be able to save or discard a fetched dad joke
+# a user will be able to see their saved dad jokes
+# a user will be able to exit the program
+
+import time
+
+class DadJokeApplication:
+
+	running = True
+
+	def run(self):
+		while self.running:
+			self.menu()
+			user_choice = input("Please choose an option: ")
+			print( "You chose: ", user_choice )
+			if user_choice == "1":
+				self.get_dad_joke()
+			elif user_choice == "2":
+				self.print_saved_dad_jokes()
+			elif user_choice == "3":
+				self.exit()
+			else:
+				time.sleep(1)
+				print("\nPlease choose a valid option! (╯°□°)╯︵ ┻━┻\n")
+
+	def menu(self):
+		print("--Welcome to the Dad Jokes App--")
+		print("1. Get new dad joke")
+		print("2. See saved dad jokes")
+		print("3. Exit")
+
+	def get_dad_joke(self):
+		time.sleep(1)
+		new_joke = fetch_number_of_jokes(1)
+		print(new_joke)
+		user_input = input("Save joke? [y/n]")
+		if user_input == 'y':
+			time.sleep(1)
+			print("Saving this gem of a joke!")
+			put_into_json_file(new_joke)
+		else:
+			time.sleep(1)
+			print("Discarding the joke...")
+
+	def print_saved_dad_jokes(self):
+		time.sleep(1)
+		print("------------------------------------")
+		saved_jokes = get_from_json_file()
+		for joke in saved_jokes:
+			print(joke)
+		print("------------------------------------")
+		time.sleep(1)
+
+	def exit(self):
+		time.sleep(1)
+		self.running = False
+		print("\nSee ya later alligator\nIn a while crocodile")
+
+app = DadJokeApplication()
+app.run()
